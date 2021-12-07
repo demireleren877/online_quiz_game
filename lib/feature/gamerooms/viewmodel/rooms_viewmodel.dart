@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game/feature/gameplay/game_screen.dart';
+import 'package:game/feature/pregame/pregame_screen.dart';
 import 'package:mobx/mobx.dart';
 part 'rooms_viewmodel.g.dart';
 
@@ -19,7 +19,7 @@ abstract class _RoomVMBase with Store {
 
   @action
   navigate(context,sd){
-    Navigator.push(context, MaterialPageRoute(builder: (_)=>GameScreen(second: sd["time"],)));
+    Navigator.push(context, MaterialPageRoute(builder: (_)=>PreGamePage()));
   }
   
 }

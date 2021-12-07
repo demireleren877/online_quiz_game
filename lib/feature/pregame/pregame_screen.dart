@@ -2,16 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:game/core/components/centered_progress.dart';
-import 'package:game/core/constants/constants.dart';
 import 'package:game/core/services/firebase_services.dart';
 import 'package:kartal/kartal.dart';
 
 import 'components/player_tile.dart';
 
 class PreGamePage extends StatelessWidget {
-  final int trSecond;
+  final int? trSecond;
   final String? roomName;
-  PreGamePage({ Key? key, required this.trSecond, required this.roomName }) : super(key: key);
+  PreGamePage({ Key? key,  this.trSecond, this.roomName }) : super(key: key);
 
   final FirebaseServices _firebaseServices = FirebaseServices();
 
@@ -19,7 +18,6 @@ class PreGamePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: primaryColor,
         body: buildBody()
       ),
     );
@@ -39,7 +37,7 @@ class PreGamePage extends StatelessWidget {
                     itemBuilder: (context,index){
                       return Padding(
                         padding: context.paddingNormal,
-                        child: PlayerTile(context, asyncSnapshot, index),
+                        child: playerTile(context, asyncSnapshot, index),
                       );
                     },
                   ),

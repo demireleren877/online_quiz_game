@@ -2,10 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:game/core/components/centered_progress.dart';
-import 'package:game/core/constants/constants.dart';
 import 'package:game/core/services/firebase_services.dart';
-import 'package:game/feature/gamerooms/constants.dart';
-import 'package:kartal/kartal.dart';
 
 import 'components/room_card.dart';
 
@@ -18,7 +15,6 @@ class GameList extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: buildAppbar(context),
-        backgroundColor: primaryColor,
         body: buildBody(),
       ),
     );
@@ -26,14 +22,7 @@ class GameList extends StatelessWidget {
 
   AppBar buildAppbar(BuildContext context) {
     return AppBar(
-        centerTitle: true,
-        iconTheme: IconThemeData(
-          color: blue
-        ),
-        title: Text(appBarTitle,style: context.textTheme.headline4?.copyWith(color: titleColor),),
-        elevation: 0,
-        backgroundColor: transparent,
-        shadowColor: transparent,
+        
       );
   }
 

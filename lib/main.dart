@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:game/core/constants/constants.dart';
+import 'package:game/core/constants/color_constants.dart';
 import 'package:game/core/constants/hive_constants.dart';
 import 'package:game/feature/home/home_screen.dart';
 import 'package:hive/hive.dart';
@@ -13,10 +13,12 @@ void main() async{
   await Firebase.initializeApp();
   var appDir = await getApplicationDocumentsDirectory();
   Hive.init(appDir.path);
-  Hive.openBox(boxName);
-  runApp(MyApp());}
+  Hive.openBox(HiveConstants.boxName);
+  runApp(const MyApp());}
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -26,16 +28,30 @@ class MyApp extends StatelessWidget {
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30)
+                borderRadius: BorderRadius.circular(30.r)
               ),
-              primary: btnColor,
-              textStyle: context.textTheme.headline5?.copyWith(color: Colors.white)
+              primary: AppColors.btnColor,
+              textStyle: context.textTheme.headline5?.copyWith(color:AppColors.white)
             )
+          ),
+          scaffoldBackgroundColor: AppColors.primaryColor,
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.r))
+          ),
+          appBarTheme:const AppBarTheme(
+            iconTheme: IconThemeData(color: AppColors.blue), 
+            backgroundColor: AppColors.transparent,
+            elevation: 0,
+            centerTitle: true,
+            shadowColor: AppColors.transparent
+          ),
+          iconTheme: IconThemeData(
+            size: 30.sp
           )
         ),
         debugShowCheckedModeBanner: false,
         title: 'Quiz Game',
-        home: HomeScreen()
+        home: const HomeScreen()
       ),
     );
   }

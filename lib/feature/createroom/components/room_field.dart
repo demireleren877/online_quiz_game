@@ -19,11 +19,6 @@ class RoomNameField extends StatelessWidget {
       child: TextField(
         onChanged: (value)=> _createVM.onChangedRoomName(value),
         style: TextStyle(fontSize: 20.sp),
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.r)
-          ),
-        ),
       ),
     );
   }

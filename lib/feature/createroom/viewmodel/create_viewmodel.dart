@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game/core/constants/hive_constants.dart';
 import 'package:game/core/services/firebase_services.dart';
-import 'package:game/feature/gameplay/game_screen.dart';
 import 'package:game/feature/pregame/pregame_screen.dart';
 import 'package:hive/hive.dart';
 import 'package:mobx/mobx.dart';
@@ -11,7 +10,7 @@ class CreateVM = _CreateVMBase with _$CreateVM;
 
 abstract class _CreateVMBase with Store {
 
-  FirebaseServices _firebaseServices = FirebaseServices();
+  final FirebaseServices _firebaseServices = FirebaseServices();
 
   @observable
   int? selectedTimeIndex;
@@ -56,8 +55,8 @@ abstract class _CreateVMBase with Store {
       "room":roomName,
       "password":password,
       "isActive":false,
-      "admin":Hive.box(boxName).getAt(0),
-      "activePlayers":[Hive.box(boxName).getAt(0)],
+      "admin":Hive.box(HiveConstants.boxName).getAt(0),
+      "activePlayers":[Hive.box(HiveConstants.boxName).getAt(0)],
     });
     Navigator.push(context, MaterialPageRoute(builder: (_)=> PreGamePage( roomName: roomName ,trSecond: (selectedTimeIndex!+4)*5,)));
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:game/core/constants/constants.dart';
+import 'package:game/core/constants/color_constants.dart';
 import 'package:kartal/kartal.dart';
 
 class SelectableButton extends StatelessWidget {
@@ -18,10 +18,10 @@ class SelectableButton extends StatelessWidget {
             onTap: onTap,
             child: Container(
                 decoration: BoxDecoration(
-                  border: Border.all(width: 0.5, color: white),
+                  border: Border.all(width: 0.5, color: AppColors.white),
                   color: selectKind == index
-                      ? btnColor
-                      : purpleShade300,
+                      ? AppColors.btnColor
+                      : AppColors.purpleShade300,
                 ),
                 width: 75.w,
                 height: 75.h,
@@ -29,7 +29,7 @@ class SelectableButton extends StatelessWidget {
                     child: Text(
                   ((index + collecter) *factor).toString(),
                   style: context.textTheme.headline6
-                      ?.copyWith(color: white),
+                      ?.copyWith(color: AppColors.white),
                 )),
               ),              
           );

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:game/core/constants/constants.dart';
+import 'package:game/core/constants/color_constants.dart';
 import 'package:game/feature/home/viewmodel/home_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 
-HomeVM _homeVM = HomeVM();
+final HomeVM _homeVM = HomeVM();
 
+// ignore: non_constant_identifier_names
 Future<dynamic> UsernameDialog(BuildContext context) {
     return showDialog(
       context: context, 
@@ -33,7 +34,7 @@ Future<dynamic> UsernameDialog(BuildContext context) {
                 SizedBox(
                   height: 50.h,  
                   width: 120.w,
-                  child:  ElevatedButton(onPressed:_homeVM.addUserName, child: Text("Confirm",style: context.textTheme.headline6?.copyWith(color: white),)))
+                  child:  ElevatedButton(onPressed:_homeVM.addUserName, child: Text("Confirm",style: context.textTheme.headline6?.copyWith(color: AppColors.white),)))
               ],
             ),
           ),

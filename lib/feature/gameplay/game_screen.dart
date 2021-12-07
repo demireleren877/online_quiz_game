@@ -26,9 +26,9 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration:BoxDecoration(
+        decoration:const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(bgPath), 
+                image: AssetImage(GamePlayConstants.bgPath), 
                 fit: BoxFit.cover)),
         child: Center(
           child: Column(

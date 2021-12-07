@@ -26,12 +26,13 @@ abstract class _GameVMBase with Store {
   double initial =1.0;
 
   @observable
+  // ignore: prefer_typing_uninitialized_variables
   var renk;
 
 
   @action
   Future getQuestions() async{
-    var response = await http.get(Uri.parse(baseUrl));
+    var response = await http.get(Uri.parse(ApiConstants.baseUrl));
     if(response.statusCode ==200){
       jsonResponse = Question.fromJson(jsonDecode(response.body));
       fonksiyon();

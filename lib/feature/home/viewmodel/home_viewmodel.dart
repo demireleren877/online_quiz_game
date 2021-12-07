@@ -18,7 +18,7 @@ abstract class _HomeVMBase with Store {
 
   @action
   addUserName(){
-    var box = Hive.box(boxName);
+    var box = Hive.box(HiveConstants.boxName);
     userName !=null? box.add(userName):null;
   }
   

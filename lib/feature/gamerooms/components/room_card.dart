@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:game/core/constants/constants.dart';
+import 'package:game/core/constants/color_constants.dart';
 import 'package:game/feature/gamerooms/viewmodel/rooms_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 import 'password_bottom_sheet.dart';
@@ -18,13 +18,13 @@ Padding RoomCard(AsyncSnapshot<dynamic> asyncSnapshot, int index, BuildContext c
         ),
         color: Colors.grey.shade300,
         child: ListTile(                                          
-          title: Text("${sd["room"]}",style:context.textTheme.headline6?.copyWith(color: black)),
-          leading: Icon(Icons.people,size: 30.sp,color: black),
-          trailing: Container(
+          title: Text("${sd["room"]}",style:context.textTheme.headline6?.copyWith(color: AppColors.black)),
+          leading: Icon(Icons.people,size: 30.sp,color: AppColors.black),
+          trailing: SizedBox(
             width: 85.w,
             child: Row(
               children: [
-                Icon(sd["password"] != null ? Icons.lock:Icons.lock_open,color: sd["password"] != null?red:green),
+                Icon(sd["password"] != null ? Icons.lock:Icons.lock_open,color: sd["password"] != null?AppColors.red:AppColors.green),
                 SizedBox(width: 10.w),
                 Text("8/${sd["players"]}",style: context.textTheme.headline6)
               ],
@@ -32,7 +32,7 @@ Padding RoomCard(AsyncSnapshot<dynamic> asyncSnapshot, int index, BuildContext c
           ),
           contentPadding: EdgeInsets.symmetric(horizontal:10.w, vertical: 10.0.h),
           onTap: (){
-            sd["password"] ==null ? _roomVM.navigate(context, sd): PassBottomSheet(context, _roomVM, sd); 
+            sd["password"] ==null ? _roomVM.navigate(context, sd): passBottomSheet(context, _roomVM, sd); 
           },
         ),
       ),

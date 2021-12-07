@@ -2,6 +2,8 @@
 //
 //     final question = questionFromJson(jsonString);
 
+// ignore_for_file: constant_identifier_names
+
 import 'dart:convert';
 
 Question questionFromJson(String str) => Question.fromJson(json.decode(str));

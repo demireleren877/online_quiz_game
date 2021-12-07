@@ -4,7 +4,8 @@ import 'package:game/feature/gamerooms/constants.dart';
 import 'package:game/feature/gamerooms/viewmodel/rooms_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 
-Future<dynamic> PassBottomSheet(BuildContext context, RoomVM _roomVM, Map<dynamic, dynamic> sd) {
+
+Future<dynamic> passBottomSheet(BuildContext context, RoomVM _roomVM, Map<dynamic, dynamic> sd) {
   return showModalBottomSheet(       
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(top: Radius.circular(15.r))
@@ -28,7 +29,7 @@ Future<dynamic> PassBottomSheet(BuildContext context, RoomVM _roomVM, Map<dynami
               children: [
                 Container(),
                 SizedBox(height: 25.h),
-                Text(enterPass,style: context.textTheme.headline6,),
+                Text(GameRoomsConstants.enterPass,style: context.textTheme.headline6,),
                 SizedBox(height: 40.h),
                 SizedBox(
                   width: 350.w,

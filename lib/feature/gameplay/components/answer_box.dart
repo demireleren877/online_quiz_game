@@ -1,7 +1,7 @@
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:game/core/components/centered_progress.dart';
-import 'package:game/core/constants/constants.dart';
+import 'package:game/core/constants/color_constants.dart';
 import 'package:game/feature/gameplay/viewmodel/game_viewmodel.dart';
 import 'package:kartal/kartal.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +23,8 @@ class AnswerBox extends StatelessWidget {
                   child: Card(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.r)),
-                    color: white,
-                    shadowColor: grey,
+                    color: AppColors.white,
+                    shadowColor: AppColors.grey,
                     child: Observer(
                         builder: (context) => _gameVM.jsonResponse != null ?Center(
                                 child: Padding(
@@ -32,7 +32,7 @@ class AnswerBox extends StatelessWidget {
                                    EdgeInsets.symmetric(horizontal: 10.0.w),
                               child: Text(_gameVM.answers[_order].replaceAll("&quot;", "").replaceAll("&#039;", "'").replaceAll("&uuml;", "ü"),
                                   style: context.textTheme.headline6
-                                      ?.copyWith(color: black)),
+                                      ?.copyWith(color: AppColors.black)),
                             )):const CenteredProgress()),
                   ),
                 );

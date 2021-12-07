@@ -19,11 +19,8 @@ class PassField extends StatelessWidget {
         child: SizedBox(
           width: 300.w,
           child: TextField(
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20.sp),
             onChanged: (value)=>_createVM.onChangedPass(value),
-            decoration: InputDecoration(              
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(15.r))),
           ),
         ),
       ),
