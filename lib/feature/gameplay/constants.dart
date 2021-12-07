@@ -1,0 +1,1 @@
+String bgPath = "assets/images/bg2.jpg";
