@@ -6,20 +6,17 @@ part 'home_viewmodel.g.dart';
 class HomeVM = _HomeVMBase with _$HomeVM;
 
 abstract class _HomeVMBase with Store {
-
   @observable
   String? userName;
 
   @action
-  onChanged(value){
+  onChanged(value) {
     userName = value;
   }
 
-
   @action
-  addUserName(){
+  addUserName() {
     var box = Hive.box(HiveConstants.boxName);
-    userName !=null? box.add(userName):null;
+    userName != null ? box.add(userName) : null;
   }
-  
 }

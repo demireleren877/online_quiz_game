@@ -7,7 +7,6 @@ import 'package:game/core/services/firebase_services.dart';
 import 'components/room_card.dart';
 
 class GameList extends StatelessWidget {
-
   FirebaseServices firebaseServices = FirebaseServices();
 
   @override
@@ -21,38 +20,33 @@ class GameList extends StatelessWidget {
   }
 
   AppBar buildAppbar(BuildContext context) {
-    return AppBar(
-        
-      );
+    return AppBar();
   }
 
   Column buildBody() {
     return Column(
-        children: [
-          SizedBox(height: 25.h),
-          Container(
-            child: StreamBuilder<QuerySnapshot>(
-              stream: firebaseServices.games.snapshots(),
-              builder: (context,AsyncSnapshot asyncSnapshot){
-                if(asyncSnapshot.hasData){
-                  return Flexible(
-                    child: ListView.builder(
-                      itemCount: asyncSnapshot.data.docs.length,
-                      itemBuilder: (context,index){
-                        return RoomCard(asyncSnapshot, index, context);
-                      },
-                    ),
-                  );
-                }
-                else{
-                  return CenteredProgress();
-                }
-              },
-            ),
+      children: [
+        SizedBox(height: 25.h),
+        Container(
+          child: StreamBuilder<QuerySnapshot>(
+            stream: firebaseServices.games.snapshots(),
+            builder: (context, AsyncSnapshot asyncSnapshot) {
+              if (asyncSnapshot.hasData) {
+                return Flexible(
+                  child: ListView.builder(
+                    itemCount: asyncSnapshot.data.docs.length,
+                    itemBuilder: (context, index) {
+                      return RoomCard(asyncSnapshot, index, context);
+                    },
+                  ),
+                );
+              } else {
+                return CenteredProgress();
+              }
+            },
           ),
-        ],
-      );
+        ),
+      ],
+    );
   }
-
-  
 }

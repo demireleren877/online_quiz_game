@@ -7,7 +7,8 @@ import 'package:kartal/kartal.dart';
 class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
-    this.onPress, this.btnText,
+    this.onPress,
+    this.btnText,
   }) : super(key: key);
 
   final VoidCallback? onPress;
@@ -20,7 +21,11 @@ class CustomButton extends StatelessWidget {
       width: 225.w,
       child: ElevatedButton(
         onPressed: onPress,
-        child: Text(btnText!,style: context.textTheme.headline6?.copyWith(color: AppColors.white,fontSize: 28.sp),),
+        child: Text(
+          btnText!,
+          style: context.textTheme.headline6
+              ?.copyWith(color: AppColors.white, fontSize: 28.sp),
+        ),
       ),
     );
   }

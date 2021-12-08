@@ -9,7 +9,8 @@ class TimerWidget extends StatelessWidget {
   const TimerWidget({
     Key? key,
     required GameVM gameVM,
-  }) : _gameVM = gameVM, super(key: key);
+  })  : _gameVM = gameVM,
+        super(key: key);
 
   final GameVM _gameVM;
 

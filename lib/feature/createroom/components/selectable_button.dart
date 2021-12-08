@@ -4,7 +4,14 @@ import 'package:game/core/constants/color_constants.dart';
 import 'package:kartal/kartal.dart';
 
 class SelectableButton extends StatelessWidget {
-  const SelectableButton({ Key? key, required this.factor,required this.collecter, this.selectKind, required this.onTap, required this.index }) : super(key: key);
+  const SelectableButton(
+      {Key? key,
+      required this.factor,
+      required this.collecter,
+      this.selectKind,
+      required this.onTap,
+      required this.index})
+      : super(key: key);
 
   final int? selectKind;
   final int factor;
@@ -15,24 +22,22 @@ class SelectableButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-            onTap: onTap,
-            child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 0.5, color: AppColors.white),
-                  color: selectKind == index
-                      ? AppColors.btnColor
-                      : AppColors.purpleShade300,
-                ),
-                width: 75.w,
-                height: 75.h,
-                child: Center(
-                    child: Text(
-                  ((index + collecter) *factor).toString(),
-                  style: context.textTheme.headline6
-                      ?.copyWith(color: AppColors.white),
-                )),
-              ),              
-          );
-        
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(width: 0.5, color: AppColors.white),
+          color: selectKind == index
+              ? AppColors.btnColor
+              : AppColors.purpleShade300,
+        ),
+        width: 75.w,
+        height: 75.h,
+        child: Center(
+            child: Text(
+          ((index + collecter) * factor).toString(),
+          style: context.textTheme.headline6?.copyWith(color: AppColors.white),
+        )),
+      ),
+    );
   }
 }

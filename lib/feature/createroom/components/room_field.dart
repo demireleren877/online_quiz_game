@@ -7,7 +7,8 @@ class RoomNameField extends StatelessWidget {
   const RoomNameField({
     Key? key,
     required CreateVM createVM,
-  }) : _createVM = createVM, super(key: key);
+  })  : _createVM = createVM,
+        super(key: key);
 
   final CreateVM _createVM;
 
@@ -17,7 +18,7 @@ class RoomNameField extends StatelessWidget {
       padding: context.paddingLow,
       width: 400.w,
       child: TextField(
-        onChanged: (value)=> _createVM.onChangedRoomName(value),
+        onChanged: (value) => _createVM.onChangedRoomName(value),
         style: TextStyle(fontSize: 20.sp),
       ),
     );

@@ -7,7 +7,7 @@ import 'components/timer_widget.dart';
 import 'viewmodel/game_viewmodel.dart';
 
 class GameScreen extends StatefulWidget {
-   final int? second;
+  final int? second;
 
   const GameScreen({Key? key, this.second}) : super(key: key);
   @override
@@ -26,9 +26,9 @@ class _GameScreenState extends State<GameScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        decoration:const BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(GamePlayConstants.bgPath), 
+                image: AssetImage(GamePlayConstants.bgPath),
                 fit: BoxFit.cover)),
         child: Center(
           child: Column(
@@ -42,13 +42,13 @@ class _GameScreenState extends State<GameScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  AnswerBox(gameVM: _gameVM,order: 0),
+                  AnswerBox(gameVM: _gameVM, order: 0),
                   SizedBox(height: 10.h),
-                  AnswerBox(gameVM: _gameVM,order: 1),
+                  AnswerBox(gameVM: _gameVM, order: 1),
                   SizedBox(height: 10.h),
-                  AnswerBox(gameVM: _gameVM,order: 2),
+                  AnswerBox(gameVM: _gameVM, order: 2),
                   SizedBox(height: 10.h),
-                  AnswerBox(gameVM: _gameVM,order: 3),
+                  AnswerBox(gameVM: _gameVM, order: 3),
                   SizedBox(height: 100.h)
                 ],
               ),

@@ -9,7 +9,8 @@ class QuestionBox extends StatelessWidget {
   const QuestionBox({
     Key? key,
     required GameVM gameVM,
-  }) : _gameVM = gameVM, super(key: key);
+  })  : _gameVM = gameVM,
+        super(key: key);
 
   final GameVM _gameVM;
 
@@ -18,14 +19,17 @@ class QuestionBox extends StatelessWidget {
     return Container(
       padding: context.paddingNormal,
       decoration: BoxDecoration(
-          color: Colors.white60,
-          borderRadius: BorderRadius.circular(20.r)),
+          color: Colors.white60, borderRadius: BorderRadius.circular(20.r)),
       child: Observer(
           builder: (context) => Center(
               child: _gameVM.jsonResponse != null
-                  ? Text(_gameVM.answers[4].replaceAll("&quot;", "").replaceAll("&#039;", "'").replaceAll("&uuml;", "ü"),
+                  ? Text(
+                      _gameVM.answers[4]
+                          .replaceAll("&quot;", "")
+                          .replaceAll("&#039;", "'")
+                          .replaceAll("&uuml;", "ü"),
                       style: context.textTheme.headline6)
-                  :const CenteredProgress())),
+                  : const CenteredProgress())),
       height: context.dynamicHeight(0.2),
       width: context.dynamicWidth(0.9),
     );

@@ -10,7 +10,8 @@ class PassCheck extends StatelessWidget {
   const PassCheck({
     Key? key,
     required CreateVM createVM,
-  }) : _createVM = createVM, super(key: key);
+  })  : _createVM = createVM,
+        super(key: key);
 
   final CreateVM _createVM;
 
@@ -28,8 +29,7 @@ class PassCheck extends StatelessWidget {
           Observer(builder: (_) {
             return IconButton(
               onPressed: _createVM.lock,
-              icon: Icon(
-                  _createVM.isLocked ? Icons.done : Icons.cancel),
+              icon: Icon(_createVM.isLocked ? Icons.done : Icons.cancel),
               color: _createVM.isLocked ? AppColors.green : AppColors.red,
             );
           }),
