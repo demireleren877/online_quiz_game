@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
               inputDecorationTheme: InputDecorationTheme(
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15.r))),
-              appBarTheme: const AppBarTheme(
-                  iconTheme: IconThemeData(color: AppColors.blue),
+              appBarTheme: AppBarTheme(
+                  iconTheme: IconThemeData(color: AppColors.blue, size: 50.sp),
                   backgroundColor: AppColors.transparent,
                   elevation: 0,
                   centerTitle: true,

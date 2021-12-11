@@ -35,7 +35,8 @@ class SelectableButton extends StatelessWidget {
         child: Center(
             child: Text(
           ((index + collecter) * factor).toString(),
-          style: context.textTheme.headline6?.copyWith(color: AppColors.white),
+          style: context.textTheme.headline6
+              ?.copyWith(fontSize: 23.sp, color: AppColors.white),
         )),
       ),
     );

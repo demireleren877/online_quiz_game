@@ -21,12 +21,12 @@ Future<dynamic> UsernameDialog(BuildContext context) {
               children: [
                 Text(
                   "Enter Your Username",
-                  style: context.textTheme.headline6,
+                  style: context.textTheme.headline6?.copyWith(fontSize: 23.sp),
                 ),
                 SizedBox(height: 20.h),
                 TextField(
                   onChanged: (value) => _homeVM.onChanged(value),
-                  style: context.textTheme.headline6,
+                  style: context.textTheme.headline6?.copyWith(fontSize: 23.sp),
                   decoration: InputDecoration(
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15.r))),
@@ -39,8 +39,8 @@ Future<dynamic> UsernameDialog(BuildContext context) {
                         onPressed: _homeVM.addUserName,
                         child: Text(
                           "Confirm",
-                          style: context.textTheme.headline6
-                              ?.copyWith(color: AppColors.white),
+                          style: context.textTheme.headline6?.copyWith(
+                              fontSize: 23.sp, color: AppColors.white),
                         )))
               ],
             ),

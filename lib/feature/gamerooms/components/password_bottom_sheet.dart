@@ -30,7 +30,8 @@ Future<dynamic> passBottomSheet(
                     SizedBox(height: 25.h),
                     Text(
                       GameRoomsConstants.enterPass,
-                      style: context.textTheme.headline6,
+                      style: context.textTheme.headline6
+                          ?.copyWith(fontSize: 23.sp),
                     ),
                     SizedBox(height: 40.h),
                     SizedBox(

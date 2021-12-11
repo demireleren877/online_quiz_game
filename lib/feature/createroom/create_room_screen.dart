@@ -19,7 +19,15 @@ class CreateRoom extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: const Icon(Icons.arrow_back),
+            iconSize: 25.sp,
+          ),
+        ),
         body: buildBody(context),
       ),
     );
@@ -33,18 +41,20 @@ class CreateRoom extends StatelessWidget {
         child: Column(
           children: [
             Text(CreateRoomConstants.title0,
-                style: context.textTheme.headline6),
+                style: context.textTheme.headline6?.copyWith(fontSize: 23.sp)),
             RoomNameField(createVM: _createVM),
+            SizedBox(height: 25.h),
             Text(CreateRoomConstants.title1,
-                style: context.textTheme.headline6),
-            Container(
-              height: 100.h,
+                style: context.textTheme.headline6?.copyWith(fontSize: 23.sp)),
+            Padding(
               padding: context.paddingNormal,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return Observer(
+              child: Container(
+                height: 75.h,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return Observer(
                       builder: (c) => SelectableButton(
                           factor: 5,
                           collecter: 4,
@@ -52,13 +62,15 @@ class CreateRoom extends StatelessWidget {
                           onTap: () {
                             _createVM.selectedTimeIndex = index;
                           },
-                          index: index));
-                },
+                          index: index),
+                    );
+                  },
+                ),
               ),
             ),
             SizedBox(height: 25.h),
             Text(CreateRoomConstants.title2,
-                style: context.textTheme.headline6),
+                style: context.textTheme.headline6?.copyWith(fontSize: 23.sp)),
             Container(
               height: 100.h,
               padding: context.paddingNormal,
@@ -80,7 +92,7 @@ class CreateRoom extends StatelessWidget {
             ),
             SizedBox(height: 25.h),
             Text(CreateRoomConstants.title3,
-                style: context.textTheme.headline6),
+                style: context.textTheme.headline6?.copyWith(fontSize: 23.sp)),
             Container(
               height: 100.h,
               padding: context.paddingNormal,
@@ -114,7 +126,7 @@ class CreateRoom extends StatelessWidget {
               },
               child: Text(CreateRoomConstants.createBtnText,
                   style: context.textTheme.headline6
-                      ?.copyWith(color: AppColors.white)),
+                      ?.copyWith(fontSize: 23.sp, color: AppColors.white)),
             ),
           ],
         ),

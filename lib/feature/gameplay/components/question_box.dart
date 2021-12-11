@@ -28,7 +28,8 @@ class QuestionBox extends StatelessWidget {
                           .replaceAll("&quot;", "")
                           .replaceAll("&#039;", "'")
                           .replaceAll("&uuml;", "ü"),
-                      style: context.textTheme.headline6)
+                      style: context.textTheme.headline6
+                          ?.copyWith(fontSize: 23.sp))
                   : const CenteredProgress())),
       height: context.dynamicHeight(0.2),
       width: context.dynamicWidth(0.9),

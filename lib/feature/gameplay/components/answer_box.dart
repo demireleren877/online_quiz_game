@@ -38,8 +38,8 @@ class AnswerBox extends StatelessWidget {
                             .replaceAll("&quot;", "")
                             .replaceAll("&#039;", "'")
                             .replaceAll("&uuml;", "ü"),
-                        style: context.textTheme.headline6
-                            ?.copyWith(color: AppColors.black)),
+                        style: context.textTheme.headline6?.copyWith(
+                            fontSize: 23.sp, color: AppColors.black)),
                   ))
                 : const CenteredProgress()),
       ),

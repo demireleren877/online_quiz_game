@@ -9,7 +9,7 @@ import 'password_bottom_sheet.dart';
 Padding RoomCard(
     AsyncSnapshot<dynamic> asyncSnapshot, int index, BuildContext context) {
   RoomVM _roomVM = RoomVM();
-  var sd = (asyncSnapshot.data.docs[index].data() as Map);
+  var sd = (asyncSnapshot.data.docs[index].data());
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 8.0.w, vertical: 8.0.h),
     child: Card(
@@ -17,18 +17,19 @@ Padding RoomCard(
       color: Colors.grey.shade300,
       child: ListTile(
         title: Text("${sd["room"]}",
-            style:
-                context.textTheme.headline6?.copyWith(color: AppColors.black)),
+            style: context.textTheme.headline6
+                ?.copyWith(fontSize: 23.sp, color: AppColors.black)),
         leading: Icon(Icons.people, size: 30.sp, color: AppColors.black),
         trailing: SizedBox(
-          width: 85.w,
+          width: 90.w,
           child: Row(
             children: [
               Icon(sd["password"] != null ? Icons.lock : Icons.lock_open,
                   color:
                       sd["password"] != null ? AppColors.red : AppColors.green),
               SizedBox(width: 10.w),
-              Text("8/${sd["players"]}", style: context.textTheme.headline6)
+              Text("${sd["activePlayers"].length}/${sd["players"]}",
+                  style: context.textTheme.headline6?.copyWith(fontSize: 23.sp))
             ],
           ),
         ),

@@ -13,7 +13,8 @@ ListTile playerTile(
     tileColor: AppColors.purpleShade300,
     title: Text(
       asyncSnapshot.data["activePlayers"][index].toString(),
-      style: context.textTheme.headline6?.copyWith(color: AppColors.white),
+      style: context.textTheme.headline6
+          ?.copyWith(fontSize: 23.sp, color: AppColors.white),
     ),
   );
 }
